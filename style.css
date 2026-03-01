@@ -1,12 +1,9 @@
 /* Update bagian ini di style.css */
 :root {
-  /* Mengubah warna oranye menjadi Cyan khas tema Anda */
   --electric-border-color: #00f3ff; 
-  --electric-light-color: oklch(from var(--electric-border-color) l c h);
-  --gradient-color: oklch(
-    from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4
-  );
-  --color-neutral-900: oklch(0.185 0 0);
+  --electric-light-color: #00f3ff;
+  --gradient-color: rgba(0, 243, 255, 0.2);
+  --color-neutral-900: rgba(10, 10, 10, 0.8); /* Dibuat agak transparan agar partikel terlihat */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -183,3 +180,4 @@ h1, h2, h3 { font-family: var(--font-title); text-transform: uppercase; }
 
 
 @keyframes spin { 100% { transform: rotate(360deg); } }
+
