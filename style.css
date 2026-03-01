@@ -8,70 +8,64 @@
 
 /* Reset & Base */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+/* 1. Pastikan Background Body Tetap Gelap */
 body { 
-    background-color: var(--bg-dark); 
+    background-color: #0a0a0a !important; /* Memaksa warna gelap */
     color: white; 
     font-family: 'JetBrains Mono', monospace;
+    margin: 0;
     overflow-x: hidden;
 }
 
+/* 2. Perbaiki Partikel agar tidak menutupi konten */
 #particles-js {
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Di belakang konten */
+    background-color: #0a0a0a;
 }
 
-/* Hero Section Layout */
-.hero { height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0 10%; }
-.hero-container { display: flex; align-items: center; gap: 50px; width: 100%; }
-.hero-content { flex: 1; }
+/* 3. Beri Z-Index tinggi pada Header dan Hero agar muncul di depan partikel */
+.header, .hero {
+    position: relative;
+    z-index: 10;
+}
 
-/* ELECTRIC CARD STYLES */
-.card-container { position: relative; padding: 2px; border-radius: 24px; z-index: 10; }
-.inner-container { position: relative; width: 320px; height: 450px; }
-.border-outer { border: 2px solid rgba(0, 243, 255, 0.3); border-radius: 24px; height: 100%; }
+/* 4. Perbaiki Kontainer Kartu Elektrik agar ukurannya pas */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container {
+    position: relative;
+    width: 320px; /* Lebar kartu */
+    height: 450px; /* Tinggi kartu */
+}
 
 .main-card {
-  width: 100%; height: 100%; border-radius: 24px;
-  border: 2px solid var(--electric-border-color);
-  filter: url(#turbulent-displace); /* Efek gelombang listrik */
-  background: rgba(10, 10, 10, 0.8);
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    border: 2px solid var(--electric-border-color);
+    background: rgba(10, 10, 10, 0.9); /* Card agak gelap transparan */
+    filter: url(#turbulent-displace);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
+/* 5. Pastikan Teks di dalam kartu terlihat jelas */
 .content-container-electric {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  display: flex; flex-direction: column; padding: 30px; z-index: 5;
-}
-
-.scrollbar-glass {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 243, 255, 0.3);
-  padding: 5px 15px; border-radius: 12px; font-size: 12px; width: fit-content;
-}
-
-.card-title { font-family: 'Orbitron', sans-serif; font-size: 28px; margin-top: 20px; color: var(--primary-color); }
-.divider-electric { margin: 20px 0; opacity: 0.2; border: 0.5px solid var(--primary-color); }
-
-.card-socials { display: flex; gap: 20px; margin-top: 15px; }
-.card-socials a { color: var(--primary-color); font-size: 20px; transition: 0.3s; }
-.card-socials a:hover { transform: scale(1.2); text-shadow: 0 0 10px var(--primary-color); }
-
-/* Glow Effects */
-.glow-layer-2 {
-  border: 2px solid var(--electric-light-color); border-radius: 24px;
-  position: absolute; inset: 0; filter: blur(4px); pointer-events: none;
-}
-.background-glow {
-  position: absolute; inset: 0; filter: blur(32px); opacity: 0.2;
-  background: linear-gradient(-30deg, var(--electric-light-color), transparent);
-}
-
-/* Carousel & Others */
-.carousel-container { perspective: 1000px; height: 400px; position: relative; overflow: hidden; }
-.carousel-3d { width: 100%; height: 100%; position: absolute; transform-style: preserve-3d; transition: transform 1s; }
-.project-card { 
-    position: absolute; width: 280px; height: 350px; left: 50%; margin-left: -140px;
-    background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(0, 243, 255, 0.2);
-    border-radius: 15px; padding: 20px; text-align: center; backdrop-filter: blur(10px);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    z-index: 15; /* Di atas main-card */
 }
