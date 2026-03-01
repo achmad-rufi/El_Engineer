@@ -9,63 +9,72 @@
 /* Reset & Base */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 /* 1. Pastikan Background Body Tetap Gelap */
+/* Pastikan Background Body Tetap Gelap */
 body { 
-    background-color: #0a0a0a !important; /* Memaksa warna gelap */
+    background-color: #0a0a0a !important; 
     color: white; 
-    font-family: 'JetBrains Mono', monospace;
-    margin: 0;
     overflow-x: hidden;
 }
 
-/* 2. Perbaiki Partikel agar tidak menutupi konten */
+/* Perbaikan Partikel */
 #particles-js {
     position: fixed;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Di belakang konten */
+    z-index: 1; /* Di belakang semua konten */
     background-color: #0a0a0a;
 }
 
-/* 3. Beri Z-Index tinggi pada Header dan Hero agar muncul di depan partikel */
-.header, .hero {
+/* Pastikan Konten muncul di depan partikel */
+.header, .hero, .journey-section, .portfolio-section {
     position: relative;
     z-index: 10;
 }
 
-/* 4. Perbaiki Kontainer Kartu Elektrik agar ukurannya pas */
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* CSS KARTU ELEKTRIK */
 .inner-container {
     position: relative;
-    width: 320px; /* Lebar kartu */
-    height: 450px; /* Tinggi kartu */
+    width: 280px; /* Ukuran lebih proporsional */
+    height: 380px;
 }
 
 .main-card {
     width: 100%;
     height: 100%;
     border-radius: 24px;
-    border: 2px solid var(--electric-border-color);
-    background: rgba(10, 10, 10, 0.9); /* Card agak gelap transparan */
+    border: 2px solid #00f3ff;
+    overflow: hidden; /* Agar foto tidak keluar border */
+    position: relative;
     filter: url(#turbulent-displace);
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
-/* 5. Pastikan Teks di dalam kartu terlihat jelas */
+.profile-img-electric {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%); /* Opsional: agar lebih menyatu dengan tema dark */
+}
+
 .content-container-electric {
     position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 15;
+}
+
+.card-panggilan {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #00f3ff;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.glow-layer-2 {
+    border: 2px solid #00f3ff;
+    border-radius: 24px;
+    position: absolute;
     inset: 0;
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    z-index: 15; /* Di atas main-card */
+    filter: blur(4px);
+    pointer-events: none;
 }
