@@ -1,174 +1,83 @@
-/* ROOT VARIABLES */
+/* --- ELECTRIC PROFILE PICTURE CSS --- */
 :root {
-    --primary: #00f3ff;
-    --primary-dark: #008b94;
-    --bg-dark: #0a0a0a;
-    --text-light: #e0e0e0;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(0, 243, 255, 0.2);
+  /* Menggunakan warna cyan dari tema portofolio Anda */
+  --electric-border-color: #00f3ff; 
+  --electric-light-color: rgba(0, 243, 255, 0.8);
+  --gradient-color: rgba(0, 243, 255, 0.2);
 }
 
-/* RESET & BASE */
-* {
-    margin: 0; padding: 0; box-sizing: border-box;
+.profile-electric-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Pusatkan jika diperlukan */
 }
 
-body {
-    background-color: var(--bg-dark) !important;
-    color: var(--text-light);
-    font-family: 'JetBrains Mono', monospace;
-    overflow-x: hidden;
+.profile-electric-container .inner-container {
+  position: relative;
+  width: 280px;
+  height: 280px;
 }
 
-h1, h2, h3, .logo-text {
-    font-family: 'Orbitron', sans-serif;
+.profile-electric-container .border-outer {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 2px solid rgba(0, 243, 255, 0.5);
+  border-radius: 50%; /* Ubah jadi 24px jika ingin bentuk kotak melengkung */
+  padding: 4px;
 }
 
-/* PARTICLES BACKGROUND */
-#particles-js {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -1; /* Berada paling belakang */
-    background-color: var(--bg-dark);
+.profile-electric-container .main-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Ubah jadi 24px jika ingin bentuk kotak melengkung */
+  border: 3px solid var(--electric-border-color);
+  filter: url(#turbulent-displace); /* Memanggil SVG Filter dari HTML */
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
 }
 
-/* HEADER & NAV */
-.header {
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 10;
-}
-.logo { text-decoration: none; color: white; font-size: 24px; font-weight: bold; }
-.logo-text { color: var(--primary); }
-.nav-menu { list-style: none; display: flex; gap: 30px; }
-.nav-link { text-decoration: none; color: white; transition: 0.3s; }
-.nav-link:hover, .nav-link.active { color: var(--primary); }
-
-/* HERO SECTION */
-.hero {
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10%;
-    position: relative;
-    z-index: 10;
+.profile-electric-container .main-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Ubah jadi 24px jika ingin bentuk kotak melengkung */
 }
 
-.hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    gap: 50px;
+/* Layer cahaya/glow yang membuat efeknya terlihat menyala */
+.profile-electric-container .glow-layer-1,
+.profile-electric-container .glow-layer-2 {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%; /* Ubah jadi 24px jika ingin bentuk kotak melengkung */
+  pointer-events: none;
 }
 
-.hero-content { flex: 1; }
-
-.greeting { font-size: 24px; color: var(--primary); margin-bottom: 10px; }
-.name { font-size: 48px; line-height: 1.2; margin-bottom: 20px; color: white; }
-.highlight { color: var(--primary); }
-
-.typing-container { font-size: 20px; margin-bottom: 20px; }
-.typing-text { color: var(--primary); border-right: 2px solid var(--primary); }
-
-.description { font-size: 16px; line-height: 1.6; margin-bottom: 30px; color: #aaa; max-width: 500px; }
-
-/* BUTTONS & LINKS */
-.hero-actions { display: flex; gap: 15px; margin-bottom: 30px; }
-.btn {
-    padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px;
-    transition: 0.3s; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
-}
-.btn-primary { background: var(--primary); color: black; border: 1px solid var(--primary); }
-.btn-primary:hover { background: transparent; color: var(--primary); box-shadow: 0 0 15px var(--primary); }
-.btn-outline { background: transparent; color: var(--primary); border: 1px solid var(--primary); }
-
-.social-links { display: flex; gap: 15px; }
-.social-icon { color: white; font-size: 24px; transition: 0.3s; }
-.social-icon:hover { color: var(--primary); transform: translateY(-3px); }
-
-/* =========================================
-   ELECTRIC BORDER PROFILE CARD
-   ========================================= */
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.profile-electric-container .glow-layer-1 {
+  border: 2px solid rgba(0, 243, 255, 0.6);
+  filter: blur(2px);
 }
 
-.electric-wrapper {
-    position: relative;
-    width: 320px;
-    height: 420px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.profile-electric-container .glow-layer-2 {
+  border: 2px solid var(--electric-light-color);
+  filter: blur(5px);
 }
 
-.electric-border-box {
-    position: absolute;
-    inset: 0; /* Memenuhi wrapper */
-    border: 3px solid var(--primary);
-    border-radius: 24px;
-    filter: url(#turbulent-displace); /* Efek listrik hanya memengaruhi div ini */
-    z-index: 1;
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4), inset 0 0 15px rgba(0, 243, 255, 0.4);
+.profile-electric-container .background-glow {
+  position: absolute;
+  top: 10%; left: 10%; right: 10%; bottom: 10%;
+  border-radius: 50%;
+  filter: blur(40px);
+  background: var(--electric-light-color);
+  z-index: -1;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
 }
 
-.electric-content-box {
-    position: absolute;
-    top: 6px; left: 6px; right: 6px; bottom: 6px;
-    border-radius: 18px;
-    overflow: hidden;
-    z-index: 2;
-    background-color: var(--bg-dark);
+.profile-electric-container:hover .background-glow {
+  opacity: 0.7; /* Menyala lebih terang saat kursor diarahkan */
 }
-
-.electric-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
-    transition: 0.3s ease;
-}
-
-.electric-img:hover { opacity: 1; transform: scale(1.02); }
-
-.electric-info {
-    position: absolute;
-    bottom: 25px;
-    left: 25px;
-    z-index: 3;
-}
-
-.electric-title {
-    background: rgba(10, 10, 10, 0.7);
-    border: 1px solid rgba(0, 243, 255, 0.5);
-    padding: 5px 12px;
-    border-radius: 8px;
-    font-size: 12px;
-    color: #fff;
-    backdrop-filter: blur(4px);
-    display: inline-block;
-    margin-bottom: 5px;
-}
-
-.electric-name {
-    font-size: 32px;
-    color: var(--primary);
-    margin: 0;
-    text-shadow: 0 0 10px rgba(0, 243, 255, 0.8);
-    letter-spacing: 2px;
-}
-
-/* MOTTO SECTION */
-.motto-section { padding: 50px 0; text-align: center; position: relative; z-index: 10; }
-.motto-container { max-width: 800px; margin: 0 auto; padding: 20px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 15px; backdrop-filter: blur(10px); }
-.motto-text { font-size: 20px; font-style: italic; color: #ddd; margin: 15px 0; }
-.quote-icon { color: var(--primary); font-size: 24px; }
