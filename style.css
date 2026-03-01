@@ -5,7 +5,13 @@
   --electric-light-color: rgba(0, 243, 255, 0.8);
   --gradient-color: rgba(0, 243, 255, 0.2);
 }
-
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: oklch(0.145 0 0);
+  color: oklch(0.985 0 0);
+  height: 100vh;
+  overflow: hidden; /* INI PENYEBABNYA! */
+}
 .profile-electric-container {
   position: relative;
   width: 320px;
@@ -81,3 +87,4 @@
 .profile-electric-container:hover .background-glow {
   opacity: 0.7; /* Menyala lebih terang saat kursor diarahkan */
 }
+
