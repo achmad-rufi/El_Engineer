@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
@@ -26,7 +27,9 @@
     <header class="header">
         <nav class="nav-container">
             <a href="#home" class="logo">
-                <span class="tag">&lt;</span><span class="logo-text">AR_DEV</span><span class="tag">/&gt;</span>
+                <span class="tag">&lt;</span>
+                <span class="logo-text">AR_DEV</span>
+                <span class="tag">/&gt;</span>
             </a>
             
             <ul class="nav-menu" id="navMenu">
@@ -36,6 +39,10 @@
                 <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span><span></span><span></span>
+            </div>
         </nav>
     </header>
 
@@ -64,37 +71,61 @@
                             <i class="fas fa-certificate"></i> Sertifikat
                         </a>
                     </div>
+                    <a href="#portfolio" class="btn btn-secondary">
+                        <i class="fas fa-eye"></i> Lihat Proyek
+                    </a>
                 </div>
 
                 <div class="social-links">
-                    <a href="https://github.com/username-anda" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/username-anda" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/username-anda" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
             <div class="hero-image">
-                <div class="electric-wrapper">
-                    <div class="electric-border-box"></div>
-                    
-                    <div class="electric-content-box">
-                        <img src="images/profil.jpeg" alt="Achmad Profile" class="electric-img">
-                        
-                        <div class="electric-info">
-                            <span class="electric-title">EE STUDENT</span>
-                            <h3 class="electric-name">ACHMAD</h3>
-                        </div>
-                    </div>
-                </div>
+                <div class="img-wrapper">
+                    <svg class="svg-container" style="position: absolute; width: 0; height: 0; pointer-events: none;">
+  <defs>
+    <filter id="turbulent-displace" colorInterpolationFilters="sRGB" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="1" />
+      <feOffset in="noise1" dx="0" dy="0" result="offsetNoise1">
+        <animate attributeName="dy" values="700; 0" dur="6s" repeatCount="indefinite" calcMode="linear" />
+      </feOffset>
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="1" />
+      <feOffset in="noise2" dx="0" dy="0" result="offsetNoise2">
+        <animate attributeName="dy" values="0; -700" dur="6s" repeatCount="indefinite" calcMode="linear" />
+      </feOffset>
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="2" />
+      <feOffset in="noise1" dx="0" dy="0" result="offsetNoise3">
+        <animate attributeName="dx" values="490; 0" dur="6s" repeatCount="indefinite" calcMode="linear" />
+      </feOffset>
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="2" />
+      <feOffset in="noise2" dx="0" dy="0" result="offsetNoise4">
+        <animate attributeName="dx" values="0; -490" dur="6s" repeatCount="indefinite" calcMode="linear" />
+      </feOffset>
+      <feComposite in="offsetNoise1" in2="offsetNoise2" result="part1" />
+      <feComposite in="offsetNoise3" in2="offsetNoise4" result="part2" />
+      <feBlend in="part1" in2="part2" mode="color-dodge" result="combinedNoise" />
+      <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="30" xChannelSelector="R" yChannelSelector="B" />
+    </filter>
+  </defs>
+</svg>
 
-                <svg width="0" height="0" style="position: absolute;">
-                    <filter id="turbulent-displace">
-                        <feTurbulence type="fractalNoise" baseFrequency="0.01 0.15" numOctaves="2" result="noise">
-                            <animate attributeName="baseFrequency" dur="6s" values="0.01 0.15;0.02 0.25;0.01 0.15" repeatCount="indefinite" />
-                        </feTurbulence>
-                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" />
-                    </filter>
-                </svg>
+<div class="profile-electric-container">
+  <div class="inner-container">
+    <div class="border-outer">
+      <div class="main-card">
+         <img src="your-profile-pic.jpg" alt="Profile Picture" />
+      </div>
+    </div>
+    <div class="glow-layer-1"></div>
+    <div class="glow-layer-2"></div>
+  </div>
+  <div class="background-glow"></div>
+</div>
+                    <div class="circle-spin"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -107,7 +138,227 @@
         </div>
     </div>
 
+    <section class="journey-section" id="journey">
+        <div class="section-header">
+            <h2 class="section-title">My <span class="highlight">Journey</span></h2>
+            <div class="circuit-line"></div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content glass-card" data-tilt>
+                    <div class="date">2023 - Sekarang</div>
+                    <h3>S1 Teknik Elektro</h3>
+                    <h4>Institut Teknologi Sumatera</h4>
+                    <div class="tags">
+                        <span class="tag-badge">IPK: 3.13</span>
+                        <span class="tag-badge">Power Systems</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content glass-card" data-tilt>
+                    <div class="date">2023 - Sekarang</div>
+                    <h3>Anggota Swarnakasa</h3>
+                    <h4>Komunitas UAV Development</h4>
+                    <div class="tags">
+                        <span class="tag-badge org">Leadership</span>
+                        <span class="tag-badge">Robotics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content glass-card" data-tilt>
+                    <div class="date">2025</div>
+                    <h3>Anggota UKM UROTERA</h3>
+                    <h4>Proyek Riset / UKM Robotcs </h4>
+                    <div class="tags">
+                        <span class="tag-badge riset">Python AI</span>
+                        <span class="tag-badge">Robotics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content glass-card" data-tilt>
+                    <div class="date">2024-2025</div>
+                    <h3>Aktif Mengikuti KRTI </h3>
+                    <h4>Bidang Racing Plane</h4>
+                    <div class="tags">
+                        <span class="tag-badge achievement">Winner</span>
+                        <span class="tag-badge">LoRaWAN</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content glass-card" data-tilt>
+                    <div class="date">2023 - Sekarang</div>
+                    <h3>Anggota Swarnakasa</h3>
+                    <h4>Komunitas UAV Development</h4>
+                    <div class="tags">
+                        <span class="tag-badge org">Leadership</span>
+                        <span class="tag-badge">Robotics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content glass-card" data-tilt>
+                    <div class="date">2025</div>
+                    <h3>Anggota UKM UROTERA</h3>
+                    <h4>Proyek Riset / UKM Robotcs </h4>
+                    <div class="tags">
+                        <span class="tag-badge riset">Python AI</span>
+                        <span class="tag-badge">Renewable Energy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content glass-card" data-tilt>
+                    <div class="date">2023 - Sekarang</div>
+                    <h3>Anggota Swarnakasa</h3>
+                    <h4>Komunitas UAV Development</h4>
+                    <div class="tags">
+                        <span class="tag-badge org">Leadership</span>
+                        <span class="tag-badge">Robotics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content glass-card" data-tilt>
+                    <div class="date">2025</div>
+                    <h3>Anggota UKM UROTERA</h3>
+                    <h4>Proyek Riset / UKM Robotcs </h4>
+                    <div class="tags">
+                        <span class="tag-badge riset">Python AI</span>
+                        <span class="tag-badge">Renewable Energy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section" id="stats">
+        <div class="stats-container">
+            <div class="stats-grid">
+                <div class="stat-card glass-card" data-tilt>
+                    <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="stat-info">
+                        <h3 class="stat-number" data-target="14">0</h3>
+                        <p class="stat-label">Proyek Selesai</p>
+                    </div>
+                </div>
+                <div class="stat-card glass-card" data-tilt>
+                    <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="stat-info">
+                        <h3 class="stat-number" data-target="100">0</h3>
+                        <p class="stat-label">% Kepuasan</p>
+                    </div>
+                </div>
+                <div class="stat-card glass-card" data-tilt>
+                    <div class="stat-icon"><i class="fas fa-code"></i></div>
+                    <div class="stat-info">
+                        <h3 class="stat-number" data-target="5218">0</h3>
+                        <p class="stat-label">Lines of Code</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+        <div class="section-header">
+            <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
+            <div class="circuit-line"></div>
+        </div>
+        <div class="skills-container">
+            <div class="skill-box glass-card" data-tilt>
+                <div class="box-header"><i class="fas fa-code"></i> <h3>Programming</h3></div>
+                <div class="tag-container">
+                    <span class="tech-tag">C/C++</span><span class="tech-tag">Python</span>
+                    <span class="tech-tag">MATLAB</span><span class="tech-tag">HTML/CSS</span>
+                </div>
+            </div>
+            <div class="skill-box glass-card" data-tilt>
+                <div class="box-header"><i class="fas fa-microchip"></i> <h3>Hardware & IoT</h3></div>
+                <div class="tag-container">
+                    <span class="tech-tag">ESP32</span><span class="tech-tag">Arduino</span>
+                    <span class="tech-tag">PCB Design</span><span class="tech-tag">MQTT</span>
+                </div>
+            </div>
+            <div class="skill-box glass-card" data-tilt>
+                <div class="box-header"><i class="fas fa-tools"></i> <h3>Tools</h3></div>
+                <div class="tag-container">
+                    <span class="tech-tag">ETAP</span><span class="tech-tag">Proteus</span>
+                    <span class="tech-tag">SolidWork</span><span class="tech-tag">VS Code</span>
+                    <span class="tech-tag">Adobe Illustrator</span><span class="tech-tag">Easy Eda</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio-section" id="portfolio">
+        <div class="section-header">
+            <h2 class="section-title">Selected <span class="highlight">Projects</span></h2>
+        </div>
+        <div class="carousel-container">
+            <div class="carousel-3d" id="carousel">
+                </div>
+            <div class="carousel-controls">
+                <button id="prevBtn" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+                <button id="nextBtn" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <h2 class="section-title">Connect <span class="highlight">Signal</span></h2>
+            <div class="circuit-line"></div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info glass-card">
+                <h3><i class="fas fa-satellite-dish"></i> Transmit Data</h3>
+                <p>Siap berkolaborasi untuk proyek IoT, Web, atau Electrical Engineering.</p>
+                <div class="info-item"><i class="fas fa-map-marker-alt"></i> <span>Bandar Lampung, Indonesia</span></div>
+                <div class="info-item"><i class="fas fa-envelope"></i> <span>achmad.123130048@student.itera.ac.id</span></div>
+                <div class="info-item"><i class="fab fa-whatsapp"></i> <span>+62 822-8001-8326</span></div>
+            </div>
+            <form class="contact-form glass-card">
+                <div class="form-group">
+                    <label>ID / Name</label>
+                    <input type="text" placeholder="Enter name" required>
+                </div>
+                <div class="form-group">
+                    <label>Frequency / Email</label>
+                    <input type="email" placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label>Message Payload</label>
+                    <textarea rows="5" placeholder="Write message..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary send-btn">
+                    <i class="fas fa-paper-plane"></i> Send Transmission
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-main">Designed & Built by Achmad Rufi &copy; 2026</p>
+            <p class="footer-sub">&lt;/&gt; with electro power</p>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
