@@ -82,15 +82,43 @@
                     <a href="https://www.instagram.com/achmad_rufi?igsh=MWx4dGw3bjBvaTZqNQ==" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-
-            <div class="hero-image">
-                <div class="img-wrapper">
-                    <img src="images/profil.jpeg" alt="Profile Picture">
-                    <div class="circle-spin"></div>
+<div class="hero-image">
+    <div class="card-container">
+        <div class="inner-container">
+            <div class="border-outer">
+                <div class="main-card"></div>
+                <div class="glow-layer-1"></div>
+                <div class="glow-layer-2"></div>
+            </div>
+            
+            <div class="content-container">
+                <div class="content-top">
+                    <div class="scrollbar-glass">EE Student</div>
+                    <p class="title">Achmad</p>
+                </div>
+                <hr class="divider" />
+                <div class="content-bottom">
+                    <p class="description">
+                        Membangun solusi masa depan dengan kode dan sirkuit.
+                    </p>
                 </div>
             </div>
+
+            <div class="overlay-1"></div>
+            <div class="overlay-2"></div>
+            <div class="background-glow"></div>
         </div>
-    </section>
+    </div>
+
+    <svg class="svg-container" width="0" height="0">
+        <filter id="turbulent-displace">
+            <feTurbulence type="fractalNoise" baseFrequency="0.01 0.15" numOctaves="2" result="noise">
+                <animate attributeName="baseFrequency" dur="8s" values="0.01 0.15;0.02 0.25;0.01 0.15" repeatCount="indefinite" />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" />
+        </filter>
+    </svg>
+</div>
 
     <div class="motto-section">
         <div class="motto-container">
@@ -316,6 +344,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
