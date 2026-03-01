@@ -1,13 +1,12 @@
+/* Update bagian ini di style.css */
 :root {
-    --primary-bg: #050505;
-    --accent-cyan: #00f3ff;
-    --accent-purple: #bc13fe;
-    --glass-bg: rgba(20, 20, 20, 0.6);
-    --glass-border: rgba(0, 243, 255, 0.3);
-    --text-main: #ffffff;
-    --text-dim: #a0a0a0;
-    --font-title: 'Orbitron', sans-serif;
-    --font-code: 'JetBrains Mono', monospace;
+  /* Mengubah warna oranye menjadi Cyan khas tema Anda */
+  --electric-border-color: #00f3ff; 
+  --electric-light-color: oklch(from var(--electric-border-color) l c h);
+  --gradient-color: oklch(
+    from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4
+  );
+  --color-neutral-900: oklch(0.185 0 0);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -181,5 +180,6 @@ h1, h2, h3 { font-family: var(--font-title); text-transform: uppercase; }
     .nav-menu { display: none; } /* Mobile menu logic needed or simplified */
     .menu-toggle { display: block; }
 }
+
 
 @keyframes spin { 100% { transform: rotate(360deg); } }
