@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achmad Ma'Rufi Siddiq - Electrical Engineer Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,6 +28,7 @@
             <a href="#home" class="logo">
                 <span class="tag">&lt;</span><span class="logo-text">AR_DEV</span><span class="tag">/&gt;</span>
             </a>
+            
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#journey" class="nav-link">Journey</a></li>
@@ -35,80 +40,74 @@
     </header>
 
     <section class="hero" id="home">
-    <div class="hero-container">
-        <div class="hero-content">
-            <h2 class="greeting">Hi, I'm</h2>
-            <h1 class="name glitched-text">Achmad Ma'rufi<br><span class="highlight">Siddiq</span></h1>
-            
-            <div class="typing-container">
-                <span class="static-text">I am </span>
-                <span class="typing-text"></span>
-            </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h2 class="greeting">Hi, I'm</h2>
+                <h1 class="name glitched-text">Achmad Ma'rufi<br><span class="highlight">Siddiq</span></h1>
+                
+                <div class="typing-container">
+                    <span class="static-text">I am </span>
+                    <span class="typing-text"></span>
+                </div>
 
-            <p class="description">
-                Mahasiswa Teknik Elektro yang berfokus pada IoT, Power Systems, dan Web Development.
-            </p>
+                <p class="description">
+                    Mahasiswa Teknik Elektro yang berfokus pada IoT, Power Systems, dan Web Development.
+                    Membangun solusi masa depan dengan kode dan sirkuit.
+                </p>
 
-            <div class="hero-actions">
-                <a href="cv-achmad.pdf" download class="btn btn-primary"><i class="fas fa-file-pdf"></i> CV</a>
-                <a href="#portfolio" class="btn btn-secondary">Projects</a>
-            </div>
-
-            <div class="social-links">
-                <a href="https://github.com/username" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/username" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="https://instagram.com/username" class="social-icon"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-
-        <div class="hero-image">
-            <div class="card-container">
-                <div class="inner-container">
-                    <div class="main-card">
-                        <img src="images/profil.jpeg" alt="Achmad" class="profile-img-electric">
+                <div class="hero-actions">
+                    <div class="btn-group">
+                        <a href="cv-achmad.pdf" download class="btn btn-primary">
+                            <i class="fas fa-file-pdf"></i> Download CV
+                        </a>
+                        <a href="sertifikat.zip" download class="btn btn-primary btn-outline">
+                            <i class="fas fa-certificate"></i> Sertifikat
+                        </a>
                     </div>
-                    
-                    <div class="content-container-electric">
-                        <div class="content-top">
-                            <div class="scrollbar-glass">EE STUDENT</div>
-                            <p class="card-panggilan">ACHMAD</p>
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="glow-layer-1"></div>
-                    <div class="glow-layer-2"></div>
-                    <div class="background-glow"></div>
+                <div class="social-links">
+                    <a href="https://github.com/username-anda" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/username-anda" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/username-anda" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
-            <svg style="position: absolute; width: 0; height: 0;">
-                <filter id="turbulent-displace">
-                    <feTurbulence type="fractalNoise" baseFrequency="0.01 0.15" numOctaves="2" result="noise">
-                        <animate attributeName="baseFrequency" dur="10s" values="0.01 0.15;0.02 0.25;0.01 0.15" repeatCount="indefinite" />
-                    </feTurbulence>
-                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" />
-                </filter>
-            </svg>
-        </div>
-    </div>
-</section>
+            <div class="hero-image">
+                <div class="electric-wrapper">
+                    <div class="electric-border-box"></div>
+                    
+                    <div class="electric-content-box">
+                        <img src="images/profil.jpeg" alt="Achmad Profile" class="electric-img">
+                        
+                        <div class="electric-info">
+                            <span class="electric-title">EE STUDENT</span>
+                            <h3 class="electric-name">ACHMAD</h3>
+                        </div>
+                    </div>
+                </div>
 
-    <section class="portfolio-section" id="portfolio">
-        <div class="section-header">
-            <h2 class="section-title">Selected <span class="highlight">Projects</span></h2>
-        </div>
-        <div class="carousel-container">
-            <div class="carousel-3d" id="carousel"></div>
-            <div class="carousel-controls">
-                <button id="prevBtn" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
-                <button id="nextBtn" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+                <svg width="0" height="0" style="position: absolute;">
+                    <filter id="turbulent-displace">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.01 0.15" numOctaves="2" result="noise">
+                            <animate attributeName="baseFrequency" dur="6s" values="0.01 0.15;0.02 0.25;0.01 0.15" repeatCount="indefinite" />
+                        </feTurbulence>
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" />
+                    </filter>
+                </svg>
             </div>
         </div>
     </section>
 
+    <div class="motto-section">
+        <div class="motto-container">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p class="motto-text">"Engineering is the closest thing to magic that exists in the world."</p>
+            <i class="fas fa-quote-right quote-icon"></i>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
