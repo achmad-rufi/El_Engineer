@@ -35,68 +35,63 @@
     </header>
 
     <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h2 class="greeting">Hi, I'm</h2>
-                <h1 class="name glitched-text">Achmad Ma'rufi<br><span class="highlight">Siddiq</span></h1>
-                
-                <div class="typing-container">
-                    <span class="static-text">I am </span>
-                    <span class="typing-text"></span>
-                </div>
-
-                <p class="description">
-                    Mahasiswa Teknik Elektro yang berfokus pada IoT, Power Systems, dan Web Development.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="cv-achmad.pdf" download class="btn btn-primary"><i class="fas fa-file-pdf"></i> CV</a>
-                    <a href="#portfolio" class="btn btn-secondary">Projects</a>
-                </div>
+    <div class="hero-container">
+        <div class="hero-content">
+            <h2 class="greeting">Hi, I'm</h2>
+            <h1 class="name glitched-text">Achmad Ma'rufi<br><span class="highlight">Siddiq</span></h1>
+            
+            <div class="typing-container">
+                <span class="static-text">I am </span>
+                <span class="typing-text"></span>
             </div>
 
-            <div class="hero-image">
-                <div class="card-container">
-                    <div class="inner-container">
-                        <div class="border-outer">
-                            <div class="main-card"></div>
-                            <div class="glow-layer-1"></div>
-                            <div class="glow-layer-2"></div>
-                        </div>
-                        
-                        <div class="content-container-electric">
-                            <div class="content-top">
-                                <div class="scrollbar-glass">EE STUDENT</div>
-                                <p class="card-title">ACHMAD</p>
-                            </div>
-                            <hr class="divider-electric" />
-                            <div class="content-bottom">
-                                <p class="card-description">IoT & AI Enthusiast</p>
-                                <div class="card-socials">
-                                    <a href="https://linkedin.com/in/username-anda" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                    <a href="https://instagram.com/username-anda" target="_blank"><i class="fab fa-instagram"></i></a>
-                                    <a href="https://github.com/username-anda" target="_blank"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
+            <p class="description">
+                Mahasiswa Teknik Elektro yang berfokus pada IoT, Power Systems, dan Web Development.
+            </p>
 
-                        <div class="overlay-1"></div>
-                        <div class="overlay-2"></div>
-                        <div class="background-glow"></div>
-                    </div>
-                </div>
+            <div class="hero-actions">
+                <a href="cv-achmad.pdf" download class="btn btn-primary"><i class="fas fa-file-pdf"></i> CV</a>
+                <a href="#portfolio" class="btn btn-secondary">Projects</a>
+            </div>
 
-                <svg class="svg-filter-container" width="0" height="0">
-                    <filter id="turbulent-displace">
-                        <feTurbulence type="fractalNoise" baseFrequency="0.01 0.15" numOctaves="2" result="noise">
-                            <animate attributeName="baseFrequency" dur="10s" values="0.01 0.15;0.02 0.25;0.01 0.15" repeatCount="indefinite" />
-                        </feTurbulence>
-                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" />
-                    </filter>
-                </svg>
+            <div class="social-links">
+                <a href="https://github.com/username" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/username" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com/username" class="social-icon"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-    </section>
+
+        <div class="hero-image">
+            <div class="card-container">
+                <div class="inner-container">
+                    <div class="main-card">
+                        <img src="images/profil.jpeg" alt="Achmad" class="profile-img-electric">
+                    </div>
+                    
+                    <div class="content-container-electric">
+                        <div class="content-top">
+                            <div class="scrollbar-glass">EE STUDENT</div>
+                            <p class="card-panggilan">ACHMAD</p>
+                        </div>
+                    </div>
+
+                    <div class="glow-layer-1"></div>
+                    <div class="glow-layer-2"></div>
+                    <div class="background-glow"></div>
+                </div>
+            </div>
+
+            <svg style="position: absolute; width: 0; height: 0;">
+                <filter id="turbulent-displace">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.01 0.15" numOctaves="2" result="noise">
+                        <animate attributeName="baseFrequency" dur="10s" values="0.01 0.15;0.02 0.25;0.01 0.15" repeatCount="indefinite" />
+                    </feTurbulence>
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" />
+                </filter>
+            </svg>
+        </div>
+    </div>
+</section>
 
     <section class="portfolio-section" id="portfolio">
         <div class="section-header">
@@ -116,3 +111,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
